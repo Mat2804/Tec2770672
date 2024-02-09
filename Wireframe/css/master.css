@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
+
+body {
+    background-color: #b47f7f;
+    background: linear-gradient(#DDA15E 25%, #fff, #283618);
+    min-height: 100vh;
+    font-family: 'Days One', sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header.homepage {
+    img {
+        height: 362px;
+
+    }
+}
+
+section.homepage {
+    display: flex;
+    flex-direction: column;
+
+    img {
+        margin-top: 30px;
+        margin-bottom: 46px;
+    }
+
+    a:is(:link, :visited) {
+        margin-left: 40px;
+        align-items: center;
+        display: flex;
+        color: #FEFAE0;
+        background-color: #BC6C25;
+        justify-content: center;
+        align-items: center;
+        font-size: 48px;
+        font-weight: -100;
+        transition: all 0.5 ease-in;
+        border-radius: 30px;
+        text-transform: uppercase;
+        text-decoration: none;
+        width: 330px;
+        height: 66px;
+    }
+
+    a:is(:hover) {
+        border: 2px solid black;
+        background-color: #283618;
+
+    }
+}
+
+header {
+    img {
+        height: 200px;
+
+    }
+}
+
+section.login {
+
+    menu {
+        padding: 0;
+        display: flex;
+
+        a:is(:link, :visited) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            text-decoration: none;
+            height: 80px;
+            width: 190px;
+        }
+
+        a:first-child {
+            background-color: #BC6C25;
+            border-radius: 30px 0 0 30px;
+            color: #FEFAE0;
+        }
+
+        a:last-child {
+            background-color: #283618;
+            border-radius: 0 30px 30px 0;
+            color: #FEFAE0;
+        }
+
+    }
+
+    input, button {
+        display: flex;
+        border: none;
+        margin-top: 30px;
+        border-radius: 30px;
+        padding: 20px;
+        width: 300px;
+
+    }
+
+    form {
+        button {
+
+            align-items: center;
+            display: flex;
+            color: #FEFAE0;
+            background-color: #BC6C25;
+            justify-content: center;
+            align-items: center;
+            font-size: 48px;
+            font-weight: 100;
+            transition: all 0.5 ease-in;
+            border-radius: 30px;
+            text-transform: uppercase;
+            text-decoration: none;
+            width: 330px;
+            height: 66px;
+        }
+
+        button:is(:hover) {
+            border: 2px solid black;
+            background-color: #283618;
+
+        }
+    }
+}
