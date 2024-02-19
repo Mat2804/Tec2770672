@@ -521,10 +521,107 @@ section.add_u {
             cursor: pointer;
             transition: all 0.4s ease-in-out;
             border-radius: 50%;
+
             &:hover {
                 transform: scale(1.5);
             }
         }
+
+        input[type=file] {
+            display: none;
+        }
+
+        button {
+
+            align-items: center;
+            display: flex;
+            color: #FEFAE0;
+            -webkit-text-stroke: 1px black;
+            background-color: #BC6C25;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 100;
+            transition: all 0.5 ease-in;
+            border-radius: 30px;
+            text-transform: uppercase;
+            text-decoration: none;
+            width: 330px;
+            height: 66px;
+            margin-left: 60px;
+        }
+
+        a {
+            color: #FEFAE0;
+            text-decoration: none;
+        }
+
+        button:is(:hover) {
+            border: 2px solid black;
+            background-color: #283618;
+
+        }
+    }
+}
+
+section.edit_u {
+    h1 {
+        display: flex;
+        align-items: center;
+        margin-top: -20px;
+        margin-left: 160px;
+        margin-bottom: 20px;
+        color: var(--colorletra);
+        -webkit-text-stroke: var(--margeletra);
+        font-size: 48px;
+
+    }
+
+    input,
+    button {
+        display: flex;
+        border: none;
+        margin-top: 30px;
+        border-radius: 30px;
+        padding: 20px;
+        width: 400px;
+        height: 50px;
+
+    }
+
+    input {
+        display: flex;
+        background-color: #DDA15E;
+        transition: all 0.5s ease-in;
+        font-family: 'Days One', sans-serif;
+
+
+        &::placeholder {
+            color: #FEFAE0;
+            opacity: 0.5;
+            -webkit-text-stroke: 1px black;
+            font-size: 24px;
+        }
+
+        &:focus {
+            background-color: #fff;
+        }
+    }
+
+    form {
+        img.upload {
+            height: 150px;
+            display: inline;
+            margin-left: 130px;
+            cursor: pointer;
+            transition: all 0.4s ease-in-out;
+            border-radius: 50%;
+
+            &:hover {
+                transform: scale(1.5);
+            }
+        }
+
         input[type=file] {
             display: none;
         }
@@ -567,7 +664,7 @@ section.show_u {
         display: flex;
         align-items: center;
         margin-top: -20px;
-        margin-left: 60px;
+        margin-left: 20px;
         margin-bottom: 20px;
         color: var(--colorletra);
         -webkit-text-stroke: var(--margeletra);
@@ -575,58 +672,36 @@ section.show_u {
 
     }
 
-    ul {
+    div {
         margin-bottom: 55px;
         border: 2px solid black;
-        height: 165px;
-        width: 320px;
+        height: 670px;
+        width: 400px;
         border-radius: 30px;
-        background-color: var(--colorfondo);
+        background-color: var(--color1);
         align-items: center;
         transition: all 1 ease-in;
         box-shadow: 2px 2px 4px 0 rgba(20, 20, 20, 0.3);
+        align-items: center;
+       
     }
 
-    ul:is(:hover) {
-        background-color: var(--color2);
+    img {
+        margin: auto;
+        padding-top: 1rem;
+        display: grid;
+        height: 300px;
     }
 
-    il {
-
-        color: var(--colorletra);
+    p {
+        float: left;
+        padding: 10px;
         background-color: var(--colorfondo);
-
+        border-radius: 30px;
+        height: auto;
+        width: 170px;
     }
-
-    a {
-        float: left;
-        text-decoration: none;
-        font-size: 25px;
-        color: var(--colorletra);
-        -webkit-text-stroke: var(--margeletra);
-        margin: 7px -7px 0 -10px;
-
-        img {
-            transition: all 0.5 ease-in;
-        }
-
-    }
-
-    &:hover img {
-        float: left;
-        height: 150px;
-        transform: scale(1);
-    }
-
-    h2 {
+    p.r{
         float: right;
-        margin-left: 50px;
-        margin-top: 60px;
-        transform: translate(6px);
-    }
-
-    h2.adoptions {
-        margin-left: 10px;
-        font-size: 30px;
     }
 }
