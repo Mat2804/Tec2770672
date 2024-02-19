@@ -45,6 +45,32 @@
             </menu>
         </section>
     </main>
+    <script src="../js/sweetalert2.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('body').on('click', '.delete', function () {
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "question",
+                    showCancelButton: true,
+                    confirmButtonColor: "#BC6C25",
+                    cancelButtonColor: "#283618",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "the user has been deleted.",
+                            icon: "success"
+                        })
+                    }
+                })
+
+            })
+        })
+    </script>
 </body>
 
 </html>
