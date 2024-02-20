@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add pet</title>
+    <link rel="stylesheet" href="../css/master.css">
+</head>
+
+<body>
+    <main>
+        <header class="nav">
+            <a href="../html/module_pet.html"><img src="../images/flecha.svg" alt="" class="coso"></a>
+            <img src="../images/logolo.svg" alt="Logo">
+            <a href=""><img src="../images/menu.svg" alt="" class="coso"></a>
+        </header>
+        <section class="edit_u">
+            <h1>Edit</h1>
+
+
+
+            <form action="dasboard.html" method="post" enctype="multipart/form-data">
+                <img src="../images/pata.jpg" alt="" class="upload" id="upload">
+                <input type="file" name="photo" id="photo" accept="image/*"></input>
+                <input type="text" name="name" placeholder="Name" required value="Alfredo"></input>
+                <input type="text" name="age" placeholder="Age" required value="5"></input>
+                <input type="text" name="kind" placeholder="Kind" required value="Dog"></input>
+                <input type="text" name="weigth" placeholder="Weigth" required value="Small"></input>
+                <input type="text" name="location" placeholder="Location" required value="New York"></input>
+                <input type="text" name="color" placeholder="Color" required value="Orange"></input>
+                <input type="text" name="description" placeholder="Description" required value="Description"></input>
+                <button type="submit"><a href="../html/module_users.html">UPDATE</a></button>
+            </form>
+
+
+
+        </section>
+    </main>
+    <script src="../js/sweetalert2.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document). ready (function () {
+            $('#upload').click(function (e) {
+                e.preventDefault()
+                $('#photo').click()
+            })
+
+            $('#photo').change(function (e) {
+                e.preventDefault()
+                let reader= new FileReader()
+                reader.onload=function(event) {
+                    $('#upload').attr("src",event.target.result)
+                }
+                reader.readAsDataURL(this.files[0])
+            })
+        });
+
+        
+    </script>
+
+</body>
+
+</html>

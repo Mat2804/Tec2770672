@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Pet</title>
+    <link rel="stylesheet" href="../css/master.css">
+</head>
+
+<body>
+    <main>
+        <header class="nav">
+            <a href="../html/module_adop.html"><img src="../images/flecha.svg" alt="" class="coso"></a>
+            <img src="../images/logolo.svg" alt="Logo">
+            <a href=""><img src="../images/menu.svg" alt="" class="coso"></a>
+        </header>
+        <section class="show_ado">
+            <h1>Adop Pet</h1>
+
+            <div>
+
+                <img src="../images/chulo.svg" alt="" class="persona">
+                <p>Name</p>
+                <p class="r">Kind</p>
+                <p>Age</p>
+                <p class="r">Weigth</p>
+                <p>Location</p>
+                <p class="r">Color</p>
+                <p>Description</p>
+                <button type="submit" class="adop"><a href="javascript:;" class="adop">Adop Me</a></button>
+            </div>
+            
+
+
+
+        </section>
+    </main>
+    <script src="../js/sweetalert2.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('body').on('click', '.adop', function () {
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "It will be a great decision!",
+                    icon: "question",
+                    showCancelButton: true,
+                    confirmButtonColor: "#BC6C25",
+                    cancelButtonColor: "#283618",
+                    confirmButtonText: "Yes, You have adopt it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: "You have adopted it!",
+                            text: "the user has a new friend",
+                            icon: "success"
+                        })
+                    }
+                })
+
+            })
+        })
+    </script>
+</body>
+
+</html>

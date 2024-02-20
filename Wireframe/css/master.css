@@ -364,7 +364,8 @@ section.dashboard {
     }
 }
 
-section.moduleu {
+section.moduleu,
+section.mp {
     h1 {
         display: flex;
         align-items: center;
@@ -393,6 +394,7 @@ section.moduleu {
         width: 330px;
         height: 40px;
         margin-left: 75px;
+        font-family: var(--letra);
 
         img {
             height: 24px;
@@ -469,7 +471,120 @@ section.moduleu {
 
 }
 
-section.add_u {
+section.module_adop {
+    div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    h1 {
+        display: flex;
+        align-items: center;
+        margin-top: -20px;
+        margin-bottom: 20px;
+        color: var(--colorletra);
+        -webkit-text-stroke: var(--margeletra);
+        font-size: 48px;
+
+    }
+
+    button {
+
+        display: flex;
+        color: #FEFAE0;
+        -webkit-text-stroke: 1px black;
+        background-color: #BC6C25;
+        justify-content: center;
+        align-items: flex-end;
+        font-size: 20px;
+        transition: all 0.5 ease-in;
+        border-radius: 30px;
+        text-transform: uppercase;
+        text-decoration: none;
+        width: 330px;
+        height: 40px;
+        margin-left: 75px;
+        font-family: var(--letra);
+
+        img {
+            height: 24px;
+            float: left;
+            margin-right: 1rem;
+        }
+    }
+
+    a {
+        color: #FEFAE0;
+        text-decoration: none;
+    }
+
+    button:is(:hover) {
+        border: 2px solid black;
+        background-color: #283618;
+
+    }
+
+    ul {
+        margin-bottom: 25px;
+        border: 2px solid black;
+        height: 250px;
+        width: 200px;
+        border-radius: 30px;
+        background-color: var(--colorfondo);
+        align-items: center;
+
+
+
+        box-shadow: 2px 2px 4px 0 rgba(20, 20, 20, 0.3);
+
+        il {
+
+            color: var(--colorletra);
+            background-color: var(--colorfondo);
+
+
+
+        }
+
+        button {
+            width: 90px;
+            margin-left: 30px;
+            margin-top: 20px;
+        }
+    }
+
+
+
+    img.persona {
+
+        height: 80px;
+        margin-top: 4px;
+        margin-left: 40px;
+
+    }
+
+    h2 {
+        margin-top: 0;
+        margin-left: 30px;
+        font-size: 32px;
+        color: var(--colorletra);
+        -webkit-text-stroke: var(--margeletra);
+
+    }
+
+    h3 {
+        margin-top: -20px;
+        margin-left: 45px;
+        font-size: 24px;
+        color: var(--colorletra);
+        -webkit-text-stroke: var(--margeletra);
+    }
+
+
+
+}
+
+section.add_u, section.add_adop {
     h1 {
         display: flex;
         align-items: center;
@@ -480,6 +595,10 @@ section.add_u {
         -webkit-text-stroke: var(--margeletra);
         font-size: 48px;
 
+    }
+    
+    h1.adop{
+        margin-left: 40px;
     }
 
     input,
@@ -659,12 +778,14 @@ section.edit_u {
     }
 }
 
-section.show_u {
+section.show_u,
+section.show_p,
+section.show_ado {
     h1 {
         display: flex;
         align-items: center;
         margin-top: -20px;
-        margin-left: 20px;
+        margin-left: 60px;
         margin-bottom: 20px;
         color: var(--colorletra);
         -webkit-text-stroke: var(--margeletra);
@@ -683,7 +804,7 @@ section.show_u {
         transition: all 1 ease-in;
         box-shadow: 2px 2px 4px 0 rgba(20, 20, 20, 0.3);
         align-items: center;
-       
+
     }
 
     img {
@@ -700,8 +821,43 @@ section.show_u {
         border-radius: 30px;
         height: auto;
         width: 170px;
+        color: var(--colorletra);
+        -webkit-text-stroke: var(--margeletra);
     }
-    p.r{
+
+    p.r {
         float: right;
+    }
+
+    button {
+        margin-left: 50px;
+        align-items: center;
+        display: flex;
+        color: #FEFAE0;
+        -webkit-text-stroke: 1px black;
+        background-color: var(--colorfondo);
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-weight: 100;
+        transition: all 0.5 ease-in;
+        border-radius: 30px;
+        text-transform: uppercase;
+        text-decoration: none;
+        width: 300px;
+        height: 50px;
+
+        a {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #FEFAE0;
+            font-family: var(--margeletra);
+        }
+    }
+
+    button:is(:hover) {
+        border: 2px solid black;
+        background-color: #283618;
+
     }
 }
