@@ -4,115 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module Users</title>
+    <title>Module users</title>
     <link rel="stylesheet" href="../css/master.css">
 </head>
 
 <body>
     <main>
         <header class="nav">
-            <a href="../html/dashboard.html"><img src="../images/flecha.svg" alt="" class="coso"></a>
+            <a href="../Layout.html"><img src="../images/flecha.svg" alt="" class="coso"></a>
             <img src="../images/logolo.svg" alt="Logo">
             <a href=""><img src="../images/menu.svg" alt="" class="coso"></a>
         </header>
-        <section class="moduleu">
-            <h1>Modules Users</h1>
-            <button type="submit"><a href="../html/add.html"><img src="../images/plus.svg" alt=""> Add User</a></button>
+        <section class="moduleusers">
+            <h1>Dashboard</h1>
             <menu>
                 <ul>
                     <il>
-
-                        <img src="../images/per1.svg" alt="" class="persona">
-                        <h2>User 1</h2>
-                        <a href="../html/show.html"> <img src="../images/lupa.svg" class="lupa"></a>
-                        <a href="../html/edit.html"> <img src="../images/editar.png" class="lapiz"></a>
-                        <a href="javascript:;" class="delete"><img src="../images/basura.svg" class="basura"></a>
-
+                        <a href="show_user.html">
+                            <img src="../images/persona.svg" alt="" class="persona">
+                            <h2>User</h2>
+                        </a>
                     </il>
                 </ul>
                 <ul>
                     <il>
-
-                        <img src="../images/per1.svg" alt="" class="persona">
-                        <h2>User 2</h2>
-                        <a href="../html/show.html"> <img src="../images/lupa.svg" class="lupa"></a>
-                        <a href="../html/edit.html"> <img src="../images/editar.png" class="lapiz"></a>
-                        <a href="javascript:;" class="delete"><img src="../images/basura.svg" class="basura"></a>
+                        <a href="">
+                            <img src="../images/pata.svg" alt="">
+                            <h2>Pets</h2>
+                        </a>
                     </il>
                 </ul>
                 <ul>
                     <il>
-
-                        <img src="../images/per1.svg" alt="" class="persona">
-                        <h2>User 3</h2>
-                        <a href="../html/show.html"> <img src="../images/lupa.svg" class="lupa"></a>
-                        <a href="../html/edit.html"> <img src="../images/editar.png" class="lapiz"></a>
-                        <a href="javascript:;" class="delete"><img src="../images/basura.svg" class="basura"></a>
-
+                        <a href="">
+                            <img src="../images/chulo.svg" alt="">
+                            <h2 class="adoptions">Adoptions</h2>
+                        </a>
                     </il>
                 </ul>
-                <ul>
-                    <il>
-
-                        <img src="../images/per1.svg" alt="" class="persona">
-                        <h2>User 4</h2>
-                        <a href="../html/show.html"> <img src="../images/lupa.svg" class="lupa"></a>
-                        <a href="../html/edit.html"> <img src="../images/editar.png" class="lapiz"></a>
-                        <a href="javascript:;" class="delete"><img src="../images/basura.svg" class="basura"></a>
-
-                    </il>
-                </ul>
-                <ul>
-                    <il>
-
-                        <img src="../images/per1.svg" alt="" class="persona">
-                        <h2>User 5</h2>
-                        <a href="../html/show.html"> <img src="../images/lupa.svg" class="lupa"></a>
-                        <a href="../html/edit.html"> <img src="../images/editar.png" class="lapiz"></a>
-                        <a href="javascript:;" class="delete"><img src="../images/basura.svg" class="basura"></a>
-
-                    </il>
-                </ul>
-                <ul>
-                    <il>
-
-                        <img src="../images/per1.svg" alt="" class="persona">
-                        <h2>User 6</h2>
-                        <a href="../html/show.html"> <img src="../images/lupa.svg" class="lupa"></a>
-                        <a href="../html/edit.html"> <img src="../images/editar.png" class="lapiz"></a>
-                        <a href="javascript:;" class="delete"><img src="../images/basura.svg" class="basura"></a>
-                    </il>
-                </ul>
-
             </menu>
         </section>
     </main>
-    <script src="../js/sweetalert2.js"></script>
-    <script src="../js/jquery-3.7.1.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('body').on('click', '.delete', function () {
-                Swal.fire({
-                    title: "Are you sure?",
-                    text: "You won't be able to revert this!",
-                    icon: "question",
-                    showCancelButton: true,
-                    confirmButtonColor: "#BC6C25",
-                    cancelButtonColor: "#283618",
-                    confirmButtonText: "Yes, delete it!"
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        Swal.fire({
-                            title: "Deleted!",
-                            text: "the user has been deleted.",
-                            icon: "success"
-                        })
-                    }
-                })
-
-            })
-        })
-    </script>
 </body>
-
-</html>

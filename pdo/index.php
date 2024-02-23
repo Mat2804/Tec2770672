@@ -19,13 +19,13 @@ $pets= getAllPets($conx);
 <body>
     <main>
         <header class="nav">
-            <a href="../html/dashboard.html"><img src="../images/flecha.svg" alt="" class="coso"></a>
-            <img src="../images/logolo.svg" alt="Logo">
-            <a href=""><img src="../images/menu.svg" alt="" class="coso"></a>
+            <a href="../html/dashboard.html"><img src="<?php echo URLIMG.'flecha.svg' ?>" alt="" class="coso"></a>
+            <img src="<?php echo URLIMG.'Logo.svg' ?>" alt="Logo">
+            <a href=""><img src="<?php echo URLIMG.'menu.svg' ?>" alt="" class="coso"></a>
         </header>
         <section class="mp">
             <h1>Modules Pets</h1>
-            <button type="submit"><a href="../html/addp.html"><img src="../images/plus.svg" alt=""> Add pet</a></button>
+            <button type="submit"><a href="../pdo/addp.php"><img src="../images/plus.svg" alt=""> Add pet</a></button>
             <menu>
             <?php foreach($pets as $pet): ?>
                 <ul>
@@ -33,9 +33,9 @@ $pets= getAllPets($conx);
 
                         <img src="<?php echo URLIMG.$pet["photo"] ?>" alt="" class="persona">
                         <h2><?php echo $pet["name"] ?></h2>
-                        <a href="../html/showp.html"> <img src="../images/lupa.svg" class="lupa"></a>
-                        <a href="../html/editp.html"> <img src="../images/editar.png" class="lapiz"></a>
-                        <a href="javascript:;" class="delete"><img src="../images/basura.svg" class="basura"></a>
+                        <a href="../html/showp.html"> <img src="<?php echo URLIMG.'lupa.svg' ?>" class="lupa"></a>
+                        <a href="../html/editp.html"> <img src="<?php echo URLIMG.'editar.png' ?>" class="lapiz"></a>
+                        <a href="javascript:;" class="delete"><img src="<?php echo URLIMG.'basura.svg' ?>" class="basura"></a>
 
                     </il>
                 </ul>
