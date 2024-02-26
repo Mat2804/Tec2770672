@@ -19,7 +19,7 @@ require "config/database.php";
 <body>
     <main>
     <header class="nav">
-            <a href="../html/dashboard.html"><img src="<?php echo URLIMG.'flecha.svg' ?>" alt="" class="coso"></a>
+            <a href="index.php"><img src="<?php echo URLIMG.'flecha.svg' ?>" alt="" class="coso"></a>
             <img src="<?php echo URLIMG.'Logo.svg' ?>" alt="Logo">
             <a href=""><img src="<?php echo URLIMG.'menu.svg' ?>" alt="" class="coso"></a>
         </header>
@@ -36,7 +36,7 @@ require "config/database.php";
                 <input type="text" name="kind" placeholder="Kind" required></input>
                 <input type="text" name="weigth" placeholder="Weigth" required></input>
                 <input type="text" name="location" placeholder="Location" required></input>
-                <input type="text" name="color" placeholder="Color" required></input>
+                <input type="text" name="breed" placeholder="Breed" required></input>
                 <input type="text" name="description" placeholder="Description" required></input>
                 <button type="submit">Add</button>
             </form>
@@ -44,7 +44,7 @@ require "config/database.php";
             <?php 
 
 if ($_POST){
-    $photo= "images/".time().".".pathinfo($_FILES['photo'],['name'],PATHINFO_EXTENSION);
+    $photo=  time().".".pathinfo($_FILES['photo']['name'],PATHINFO_EXTENSION);
 
     $data = [
         'name' =>    $_POST['name'],
@@ -58,10 +58,11 @@ if ($_POST){
     ];
 
     if (addPet($conx, $data)) {
-        move_uploaded_file ($_FILES['photo']['tmp_name']."/images/". $photo);
-    } else {
+        move_uploaded_file($_FILES['photo']['tmp_name'], "../Wireframe/images/" . $photo);
+        header("Location: index.php");
+} else {
 
-    }
+}
 }
 
 

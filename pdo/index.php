@@ -33,7 +33,7 @@ $pets= getAllPets($conx);
 
                         <img src="<?php echo URLIMG.$pet["photo"] ?>" alt="" class="persona">
                         <h2><?php echo $pet["name"] ?></h2>
-                        <a href="../html/showp.html"> <img src="<?php echo URLIMG.'lupa.svg' ?>" class="lupa"></a>
+                        <a href="show.php?id=<?$pet['id']?>"> <img src="<?php echo URLIMG.'lupa.svg' ?>" class="lupa"></a>
                         <a href="../html/editp.html"> <img src="<?php echo URLIMG.'editar.png' ?>" class="lapiz"></a>
                         <a href="javascript:;" class="delete"><img src="<?php echo URLIMG.'basura.svg' ?>" class="basura"></a>
 
@@ -44,8 +44,8 @@ $pets= getAllPets($conx);
             </menu>
         </section>
     </main>
-    <script src="../js/sweetalert2.js"></script>
-    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="<?php echo URLJS.'/jquery-3.7.1.min.js' ?>"></script>
+    <script src="<?php echo URLJS.'/sweetalert2.js' ?>"></script>
     <script>
         $(document).ready(function () {
             $('body').on('click', '.delete', function () {
