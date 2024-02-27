@@ -2,7 +2,7 @@
 require "config/app.php";
 require "config/database.php";
 
-$pet = getPet($cont, $_GET['id']);
+$pet = getPet($conx, $_GET['id']);
 ?>
 
 <!DOCTYPE html>
@@ -24,17 +24,18 @@ $pet = getPet($cont, $_GET['id']);
         </header>
         <section class="show_p">
             <h1>Show Pet</h1>
-
+            
             <div>
-
-                <img src="<?php echo URLIMG.'/'.$pet['photo']?>" alt="" class="persona">
+            
+                <img src="<?php echo URLIMG.$pet['photo']?>" alt="" class="persona">
                 <p><?=$pet['name']?></p>
-                <p class="r"><?=$pet['king']?></p>
+                <p class="r"><?=$pet['kind']?></p>
                 <p><?=$pet['age']?></p>
                 <p class="r"><?=$pet['weigth']?></p>
                 <p><?=$pet['breed']?></p>
                 <p class="r"><?=$pet['location']?></p>
                 <p>Description</p>
+       
             </div>
 
 

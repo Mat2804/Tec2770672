@@ -2,6 +2,8 @@
 require "config/app.php";
 require "config/database.php";
 $pets= getAllPets($conx);
+
+
 ?>
 
 
@@ -28,41 +30,34 @@ $pets= getAllPets($conx);
             <button type="submit"><a href="../pdo/addp.php"><img src="../images/plus.svg" alt=""> Add pet</a></button>
             <menu>
             <?php foreach($pets as $pet): ?>
-                <ul>
-                    <il>
-
-                        <img src="<?php echo URLIMG.$pet["photo"] ?>" alt="" class="persona">
-                        <h2><?php echo $pet["name"] ?></h2>
-                        <a href="showp.php?id=<?=$pet['id']?>"> <img src="<?php echo URLIMG.'lupa.svg' ?>" class="lupa"></a>
-                        <a href="editp.php?id=<?=$pet['id']?>"> <img src="<?php echo URLIMG.'editar.png' ?>" class="lapiz"></a>
-                        <a href="javascript:;" class="delete" data-id="<?=$pet['id']?>"><img src="<?php echo URLIMG.'basura.svg' ?>" class="basura"></a>
-
-                    </il>
-                </ul>
+                <main>
+        <header class="login">
+            <img src="../images/logolo.svg" alt="Logo">
+        </header>
+        <section class="login">
+            <menu>
+                <a href="#">Login</a>
+                <a href="register.html">Register</a>
+            </menu>
+            <form action="dasboard.html" method="post">
+                <h2>Email:</h2>
+                <input type="email" name="email"  required></input>
+                <h2 class="password">Password:</h2>
+                <input type="password" name="password" required></input>
+                <button type="submit"><a href="dashboard.html">Login</a></button>
+            </form>
+        </section>
+    </main>
                 
                 <?php endforeach ?>
             </menu>
         </section>
-    </main>
+    
     <script src="<?php echo URLJS.'/jquery-3.7.1.min.js' ?>"></script>
     <script src="<?php echo URLJS.'/sweetalert2.js' ?>"></script>
     <script>
         $(document).ready(function () {
-           
-            <?php if(isset($_SESSION['msg'])): ?>
-                Swal.fire({
-                    position: "top-end",
-                    title: "Congratulations!",
-                    text: "<?php echo $_SESSION['msg'] ?>",
-                    icon: "success",
-                    showConfirmButton: false,
-                    timer: 5000
-                })
-                <?php unset($_SESSION['msg']) ?>
-            <?php endif ?>
-
             $('body').on('click', '.delete', function () {
-                $id = $(this).attr('data-id')
                 Swal.fire({
                     title: "Are you sure?",
                     text: "You won't be able to revert this!",
@@ -73,9 +68,11 @@ $pets= getAllPets($conx);
                     confirmButtonText: "Yes, delete it!"
                 }).then((result) => {
                     if (result.isConfirmed) {
-                                                   
-                            window.location.replace('delete.php?id=' + $id)
-                       
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "the user has been deleted.",
+                            icon: "success"
+                        })
                     }
                 })
 
