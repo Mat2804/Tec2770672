@@ -676,7 +676,7 @@ section.add_u, section.add_adop {
         }
 
         button:is(:hover) {
-            border: 2px solid black;
+            border: 2px solid rgb(151, 154, 184);
             background-color: #283618;
 
         }

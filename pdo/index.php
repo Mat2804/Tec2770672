@@ -19,7 +19,7 @@ $pets= getAllPets($conx);
 <body>
     <main>
         <header class="nav">
-            <a href="../html/dashboard.html"><img src="<?php echo URLIMG.'flecha.svg' ?>" alt="" class="coso"></a>
+            <a href="../index.html"><img src="<?php echo URLIMG.'flecha.svg' ?>" alt="" class="coso"></a>
             <img src="<?php echo URLIMG.'Logo.svg' ?>" alt="Logo">
             <a href=""><img src="<?php echo URLIMG.'menu.svg' ?>" alt="" class="coso"></a>
         </header>
