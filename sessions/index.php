@@ -1,84 +1,63 @@
 <?php
-require "config/app.php";
-require "config/database.php";
-$pets= getAllPets($conx);
+    require "config/app.php";
+    require "config/database.php";
 
-
+    if (isset($_SESSION['uid'])) {
+        header("location: dashboard.php");
+    }
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module Pets</title>
-    <link rel="stylesheet" href= "<?php echo URLCSS."/master.css"?>">
+    <title>Login Users</title>
+    <link rel="stylesheet" href="<?php echo URLCSS . "/master.css" ?>">
 </head>
-
 <body>
     <main>
-        <header class="nav">
-            <a href="../html/dashboard.html"><img src="<?php echo URLIMG.'flecha.svg' ?>" alt="" class="coso"></a>
-            <img src="<?php echo URLIMG.'Logo.svg' ?>" alt="Logo">
-            <a href=""><img src="<?php echo URLIMG.'menu.svg' ?>" alt="" class="coso"></a>
-        </header>
-        <section class="mp">
-            <h1>Modules Pets</h1>
-            <button type="submit"><a href="../pdo/addp.php"><img src="../images/plus.svg" alt=""> Add pet</a></button>
-            <menu>
-            <?php foreach($pets as $pet): ?>
-                <main>
-        <header class="login">
-            <img src="../images/logolo.svg" alt="Logo">
-        </header>
+        
         <section class="login">
             <menu>
-                <a href="#">Login</a>
-                <a href="register.html">Register</a>
+                <a href="javascript:;">Login</a>
+                <a href="register.php">Register</a>
             </menu>
-            <form action="dasboard.html" method="post">
-                <h2>Email:</h2>
-                <input type="email" name="email"  required></input>
-                <h2 class="password">Password:</h2>
-                <input type="password" name="password" required></input>
-                <button type="submit"><a href="dashboard.html">Login</a></button>
+            <form action="login.php" method="post">
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Login</button>
             </form>
         </section>
     </main>
-                
-                <?php endforeach ?>
-            </menu>
-        </section>
-    
-    <script src="<?php echo URLJS.'/jquery-3.7.1.min.js' ?>"></script>
-    <script src="<?php echo URLJS.'/sweetalert2.js' ?>"></script>
+    <script src="<?php echo URLJS . "/sweetalert2.js" ?>"></script>
+    <script src="<?php echo URLJS . "/jquery-3.7.1.min.js" ?>"></script>
     <script>
         $(document).ready(function () {
-            $('body').on('click', '.delete', function () {
-                Swal.fire({
-                    title: "Are you sure?",
-                    text: "You won't be able to revert this!",
-                    icon: "question",
-                    showCancelButton: true,
-                    confirmButtonColor: "#BC6C25",
-                    cancelButtonColor: "#283618",
-                    confirmButtonText: "Yes, delete it!"
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        Swal.fire({
-                            title: "Deleted!",
-                            text: "the user has been deleted.",
-                            icon: "success"
-                        })
-                    }
-                })
 
-            })
+            <?php if(isset($_SESSION['error'])): ?>
+                Swal.fire({
+                    position: "top-end",
+                    title: "Ops!",
+                    text: "<?php echo $_SESSION['error'] ?>",
+                    icon: "error",
+                    showConfirmButton: false,
+                    timer: 5000
+                })
+                <?php unset($_SESSION['error']) ?>
+            <?php endif ?>
+
+            <?php if(isset($_SESSION['msg'])): ?>
+                Swal.fire({
+                    position: "top-end",
+                    title: "Congratulations!",
+                    text: "<?php echo $_SESSION['msg'] ?>",
+                    icon: "success",
+                    showConfirmButton: false,
+                    timer: 5000
+                })
+                <?php unset($_SESSION['msg']) ?>
+            <?php endif ?>
         })
     </script>
 </body>
-
 </html>
